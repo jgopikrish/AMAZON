@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>FREERECHARGE</groupId>
+    <artifactId>cardbill</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <properties>
+        <tango.site>faci</tango.site>
+        <tango.platform>assdd</tango.platform>
+        <tango.family>fam</tango.family>
+        <tango.bus>bus</tango.bus>
+    </properties>
+
+    <!-- TODO define distributionManagement for your server
+    <distributionManagement>
+    </distributionManagement>
+    -->
+
+    <licenses>
+        <license>
+            <name>jhjkk</name>
+        </license>
+    </licenses>
+
+    <organization>
+        <name>assdsd</name>
+        <url>asassds</url>
+    </organization>
+
+    <developers>
+        <developer>
+            <name>bill</name>
+            <email>card</email>
+            <organization>assdsd</organization>
+            <organizationUrl>asassds</organizationUrl>
+            <roles>
+                <role>developer</role>
+            </roles>
+        </developer>
+    </developers>
+
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.tango-controls</groupId>
+            <artifactId>JTango</artifactId>
+            <version>${JTango.version}</version>
+            <type>pom</type>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>RELEASE</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.5</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+            <plugin>
+                <!-- maven-assembly-plugin creates single executable jar during maven package phase -->
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>3.0.0</version>
+                <executions>
+                    <execution>
+                        <id>assembly</id>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                        <phase>package</phase>
+                        <configuration>
+                            <appendAssemblyId>false</appendAssemblyId>
+                            <descriptorRefs>
+                                <descriptorRef>jar-with-dependencies</descriptorRef>
+                            </descriptorRefs>
+                            <archive>
+                                <manifest>
+                                    <mainClass>FREERECHARGE.cardbill</mainClass>
+                                </manifest>
+                            </archive>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <!-- TODO setup release plugin, see how to -->
+        </plugins>
+    </build>
+</project>
